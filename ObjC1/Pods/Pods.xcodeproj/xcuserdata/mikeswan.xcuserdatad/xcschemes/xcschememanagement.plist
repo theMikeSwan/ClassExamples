@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>CurrencyRequest-CurrencyRequest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CurrencyRequest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DistanceGetter-DistanceGetter.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DistanceGetter.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ObjC1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>375463DA7786AB65FEEB6ADCBBB89EC9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>796ED9D6DF47A285DD2D47B49A9C8AA3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>853104DE0ECE79EA7123B9827AA212BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9686F00848D9B8DE3852AA6E6E5269C6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BAA3F7355AF2B251BA963520B0792A5D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
