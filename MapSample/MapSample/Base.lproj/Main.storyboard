@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E39c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ofe-j9-RNl">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="nKp-ke-Jkm">
+                                        <view key="customView" contentMode="scaleToFill" id="NJf-KP-b6I">
+                                            <rect key="frame" x="20" y="5.5" width="156" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Me:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqF-sb-ARu">
+                                                    <rect key="frame" x="8" y="6.5" width="76" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Sl-uG-M3C">
+                                                    <rect key="frame" x="96" y="1" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="toggleTracking:" destination="BYZ-38-t0r" eventType="valueChanged" id="34a-7i-gak"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="0Sl-uG-M3C" firstAttribute="leading" secondItem="qqF-sb-ARu" secondAttribute="trailing" constant="12" id="A8T-q8-Wbo"/>
+                                                <constraint firstItem="qqF-sb-ARu" firstAttribute="centerY" secondItem="NJf-KP-b6I" secondAttribute="centerY" id="E0I-g6-nz0"/>
+                                                <constraint firstItem="0Sl-uG-M3C" firstAttribute="centerY" secondItem="NJf-KP-b6I" secondAttribute="centerY" id="H5F-ml-uic"/>
+                                                <constraint firstItem="qqF-sb-ARu" firstAttribute="leading" secondItem="NJf-KP-b6I" secondAttribute="leading" constant="8" id="ozZ-4g-Gav"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Sl-uG-M3C" secondAttribute="trailing" constant="11" id="yyn-ji-ge3"/>
+                                            </constraints>
+                                        </view>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jsO-aC-eWS"/>
+                                    <barButtonItem title="HP1" id="FVY-nW-x6e">
+                                        <connections>
+                                            <action selector="showHP1:" destination="BYZ-38-t0r" id="lzv-VB-zRL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="HP2" id="jUB-tj-E7x">
+                                        <connections>
+                                            <action selector="showHP2:" destination="BYZ-38-t0r" id="Eme-0j-uMu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="HP3" id="IfY-U0-KHL">
+                                        <connections>
+                                            <action selector="showHP3:" destination="BYZ-38-t0r" id="HxW-0t-gow"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="U9E-HP-eyI">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bpk-Bq-vLC"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ofe-j9-RNl" secondAttribute="trailing" id="2ic-84-k0v"/>
+                            <constraint firstItem="U9E-HP-eyI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9jy-Vw-E1w"/>
+                            <constraint firstItem="Ofe-j9-RNl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IKu-16-em7"/>
+                            <constraint firstItem="Ofe-j9-RNl" firstAttribute="top" secondItem="U9E-HP-eyI" secondAttribute="bottom" id="QtM-sz-xgY"/>
+                            <constraint firstAttribute="trailing" secondItem="U9E-HP-eyI" secondAttribute="trailing" id="UWR-hd-L4e"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ofe-j9-RNl" secondAttribute="bottom" id="gy5-eD-EYF"/>
+                            <constraint firstItem="U9E-HP-eyI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mRE-Ge-4Hx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="U9E-HP-eyI" id="SYR-ZR-1ED"/>
+                        <outlet property="trackingSwitch" destination="0Sl-uG-M3C" id="x3O-bG-9yt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="337"/>
+        </scene>
+    </scenes>
+</document>
