@@ -9,11 +9,20 @@
 /* Begin PBXBuildFile section */
 		42D85F4F1C71251E004CD696 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D85F4E1C71251E004CD696 /* main.m */; };
 		42D85F521C71251E004CD696 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D85F511C71251E004CD696 /* AppDelegate.m */; };
-		42D85F551C71251E004CD696 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D85F541C71251E004CD696 /* ViewController.m */; };
 		42D85F581C71251E004CD696 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D85F561C71251E004CD696 /* Main.storyboard */; };
 		42D85F5B1C71251E004CD696 /* ToDos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42D85F591C71251E004CD696 /* ToDos.xcdatamodeld */; };
 		42D85F5D1C71251E004CD696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D85F5C1C71251E004CD696 /* Assets.xcassets */; };
 		42D85F601C71251E004CD696 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D85F5E1C71251E004CD696 /* LaunchScreen.storyboard */; };
+		42D85F691C713035004CD696 /* Done.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D85F671C713035004CD696 /* Done.png */; };
+		42D85F6A1C713035004CD696 /* NotDone.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D85F681C713035004CD696 /* NotDone.png */; };
+		42D85F6D1C7152D0004CD696 /* ToDoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D85F6C1C7152D0004CD696 /* ToDoTableViewController.m */; };
+		42D85F701C7152E1004CD696 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D85F6F1C7152E1004CD696 /* DetailViewController.m */; };
+		42D85F731C7152FD004CD696 /* ToDoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D85F721C7152FD004CD696 /* ToDoTableViewCell.m */; };
+		42D85F761C71534A004CD696 /* EntityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D85F751C71534A004CD696 /* EntityTableViewController.m */; };
+		42D85F7F1C71559D004CD696 /* ToDo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D85F781C71559D004CD696 /* ToDo+CoreDataProperties.m */; };
+		42D85F801C71559D004CD696 /* ToDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D85F7A1C71559D004CD696 /* ToDo.m */; };
+		42D85F811C71559D004CD696 /* Priority+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D85F7C1C71559D004CD696 /* Priority+CoreDataProperties.m */; };
+		42D85F821C71559D004CD696 /* Priority.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D85F7E1C71559D004CD696 /* Priority.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +30,29 @@
 		42D85F4E1C71251E004CD696 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42D85F501C71251E004CD696 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42D85F511C71251E004CD696 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		42D85F531C71251E004CD696 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		42D85F541C71251E004CD696 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		42D85F571C71251E004CD696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42D85F5A1C71251E004CD696 /* ToDos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDos.xcdatamodel; sourceTree = "<group>"; };
 		42D85F5C1C71251E004CD696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42D85F5F1C71251E004CD696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42D85F611C71251E004CD696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42D85F671C713035004CD696 /* Done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Done.png; sourceTree = "<group>"; };
+		42D85F681C713035004CD696 /* NotDone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotDone.png; sourceTree = "<group>"; };
+		42D85F6B1C7152D0004CD696 /* ToDoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoTableViewController.h; sourceTree = "<group>"; };
+		42D85F6C1C7152D0004CD696 /* ToDoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTableViewController.m; sourceTree = "<group>"; };
+		42D85F6E1C7152E1004CD696 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		42D85F6F1C7152E1004CD696 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		42D85F711C7152FD004CD696 /* ToDoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoTableViewCell.h; sourceTree = "<group>"; };
+		42D85F721C7152FD004CD696 /* ToDoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTableViewCell.m; sourceTree = "<group>"; };
+		42D85F741C71534A004CD696 /* EntityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityTableViewController.h; sourceTree = "<group>"; };
+		42D85F751C71534A004CD696 /* EntityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityTableViewController.m; sourceTree = "<group>"; };
+		42D85F771C71559D004CD696 /* ToDo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		42D85F781C71559D004CD696 /* ToDo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToDo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		42D85F791C71559D004CD696 /* ToDo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDo.h; sourceTree = "<group>"; };
+		42D85F7A1C71559D004CD696 /* ToDo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDo.m; sourceTree = "<group>"; };
+		42D85F7B1C71559D004CD696 /* Priority+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Priority+CoreDataProperties.h"; sourceTree = "<group>"; };
+		42D85F7C1C71559D004CD696 /* Priority+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Priority+CoreDataProperties.m"; sourceTree = "<group>"; };
+		42D85F7D1C71559D004CD696 /* Priority.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Priority.h; sourceTree = "<group>"; };
+		42D85F7E1C71559D004CD696 /* Priority.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Priority.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +85,21 @@
 		42D85F4C1C71251E004CD696 /* ToDos */ = {
 			isa = PBXGroup;
 			children = (
+				42D85F831C7155B9004CD696 /* Model */,
 				42D85F501C71251E004CD696 /* AppDelegate.h */,
 				42D85F511C71251E004CD696 /* AppDelegate.m */,
-				42D85F531C71251E004CD696 /* ViewController.h */,
-				42D85F541C71251E004CD696 /* ViewController.m */,
+				42D85F6B1C7152D0004CD696 /* ToDoTableViewController.h */,
+				42D85F6C1C7152D0004CD696 /* ToDoTableViewController.m */,
+				42D85F6E1C7152E1004CD696 /* DetailViewController.h */,
+				42D85F6F1C7152E1004CD696 /* DetailViewController.m */,
+				42D85F711C7152FD004CD696 /* ToDoTableViewCell.h */,
+				42D85F721C7152FD004CD696 /* ToDoTableViewCell.m */,
+				42D85F741C71534A004CD696 /* EntityTableViewController.h */,
+				42D85F751C71534A004CD696 /* EntityTableViewController.m */,
 				42D85F561C71251E004CD696 /* Main.storyboard */,
 				42D85F5C1C71251E004CD696 /* Assets.xcassets */,
 				42D85F5E1C71251E004CD696 /* LaunchScreen.storyboard */,
 				42D85F611C71251E004CD696 /* Info.plist */,
-				42D85F591C71251E004CD696 /* ToDos.xcdatamodeld */,
 				42D85F4D1C71251E004CD696 /* Supporting Files */,
 			);
 			path = ToDos;
@@ -77,9 +108,28 @@
 		42D85F4D1C71251E004CD696 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				42D85F671C713035004CD696 /* Done.png */,
+				42D85F681C713035004CD696 /* NotDone.png */,
 				42D85F4E1C71251E004CD696 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42D85F831C7155B9004CD696 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42D85F591C71251E004CD696 /* ToDos.xcdatamodeld */,
+				42D85F771C71559D004CD696 /* ToDo+CoreDataProperties.h */,
+				42D85F781C71559D004CD696 /* ToDo+CoreDataProperties.m */,
+				42D85F791C71559D004CD696 /* ToDo.h */,
+				42D85F7A1C71559D004CD696 /* ToDo.m */,
+				42D85F7B1C71559D004CD696 /* Priority+CoreDataProperties.h */,
+				42D85F7C1C71559D004CD696 /* Priority+CoreDataProperties.m */,
+				42D85F7D1C71559D004CD696 /* Priority.h */,
+				42D85F7E1C71559D004CD696 /* Priority.m */,
+			);
+			name = Model;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +190,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				42D85F601C71251E004CD696 /* LaunchScreen.storyboard in Resources */,
+				42D85F6A1C713035004CD696 /* NotDone.png in Resources */,
+				42D85F691C713035004CD696 /* Done.png in Resources */,
 				42D85F5D1C71251E004CD696 /* Assets.xcassets in Resources */,
 				42D85F581C71251E004CD696 /* Main.storyboard in Resources */,
 			);
@@ -152,10 +204,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42D85F551C71251E004CD696 /* ViewController.m in Sources */,
+				42D85F761C71534A004CD696 /* EntityTableViewController.m in Sources */,
+				42D85F821C71559D004CD696 /* Priority.m in Sources */,
+				42D85F811C71559D004CD696 /* Priority+CoreDataProperties.m in Sources */,
+				42D85F701C7152E1004CD696 /* DetailViewController.m in Sources */,
 				42D85F521C71251E004CD696 /* AppDelegate.m in Sources */,
+				42D85F6D1C7152D0004CD696 /* ToDoTableViewController.m in Sources */,
+				42D85F731C7152FD004CD696 /* ToDoTableViewCell.m in Sources */,
+				42D85F7F1C71559D004CD696 /* ToDo+CoreDataProperties.m in Sources */,
 				42D85F4F1C71251E004CD696 /* main.m in Sources */,
 				42D85F5B1C71251E004CD696 /* ToDos.xcdatamodeld in Sources */,
+				42D85F801C71559D004CD696 /* ToDo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +373,8 @@
 				42D85F5A1C71251E004CD696 /* ToDos.xcdatamodel */,
 			);
 			currentVersion = 42D85F5A1C71251E004CD696 /* ToDos.xcdatamodel */;
-			path = ToDos.xcdatamodeld;
+			name = ToDos.xcdatamodeld;
+			path = ToDos/ToDos.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ToDoTableViewCell.h
 //  ToDos
 //
 //  Created by Mike Swan on 2/14/16.
@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ToDo.h"
 
-@interface ViewController : UIViewController
-
-
+@interface ToDoTableViewCell : UITableViewCell
+@property ToDo *toDo;
 @end
-
