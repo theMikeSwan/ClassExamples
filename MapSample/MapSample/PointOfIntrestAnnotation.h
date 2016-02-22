@@ -9,6 +9,7 @@
 #import <MapKit/MapKit.h>
 #import "PointOfInterest.h"
 
+/// Custom subclass of MKPointAnnotation that adds a variable to store the point of interest that is being displayed for later access.
 @interface PointOfIntrestAnnotation : MKPointAnnotation
 @property PointOfInterest *poi;
 @end

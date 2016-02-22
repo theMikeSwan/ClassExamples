@@ -7,7 +7,7 @@
 //
 
 #import <MapKit/MapKit.h>
-
+/// Custom class used for the pin dispalyed on a map and the callout shown when the pin is taped.
 @interface PointOfInterestAnnotationView : MKPinAnnotationView
 
 @end

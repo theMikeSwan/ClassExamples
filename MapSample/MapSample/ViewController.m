@@ -12,7 +12,7 @@
 #import "PointOfIntrestAnnotation.h"
 #import "PointOfInterest.h"
 
-// Enum so we know if we can use location services or have even asked yet.
+/// Enum so we know if we can use location services or have even asked yet.
 typedef enum {
     TMSLocationAvalibilityUnknown,
     TMSLocationAvalibilityApproved,
@@ -41,6 +41,7 @@ typedef enum {
     [self configureLocationManager];
 }
 
+#pragma mark - Location
 /// Sets up the location manager for us
 - (void) configureLocationManager {
     CLLocationManager *manager = [[CLLocationManager alloc] init];
@@ -79,6 +80,7 @@ typedef enum {
     [self centerMapOnAnnotation:[_mapView userLocation]];
 }
 
+#pragma mark - map delegate and annotations
 /// Creates all of the annotations we want to display. Doing it with a plist file makes it easier to change in the future.
 - (void) createAnnotations {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"PointsOfInterest" ofType:@"plist"];
@@ -101,11 +103,6 @@ typedef enum {
     [_mapView addAnnotations:_annotations];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 /// Declared in MKMapViewDelegate. Used to set the view that is used to mark a position on the map. Allows us to use our custom annotation view.
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     if ([annotation class] == [PointOfIntrestAnnotation class]) {
@@ -115,19 +112,7 @@ typedef enum {
     return nil;
 }
 
-- (IBAction)showHP1:(id)sender {
-    [self centerMapOnAnnotation:[self annotationWithName:@"Harry Potter Studio Tour London"]];
-}
-
-- (IBAction)showHP2:(id)sender {
-    [self centerMapOnAnnotation:[self annotationWithName:@"Wizarding World of Harry Potter Orlando"]];
-}
-
-- (IBAction)showHP3:(id)sender {
-    [self centerMapOnAnnotation:[self annotationWithName:@"Wizarding World of Harry Potter Hollywood"]];
-}
-
-// This method of getting the specific annotation we want is less fragile, we always get the one that has th etitle we are looking for or nothing at all.
+// This method of getting the specific annotation we want is less fragile, we always get the one that has the title we are looking for or nothing at all.
 - (MKPointAnnotation *)annotationWithName: (NSString *)name {
     MKPointAnnotation *result;
     for (PointOfIntrestAnnotation *annotation in _annotations) {
@@ -141,8 +126,19 @@ typedef enum {
 
 - (void) centerMapOnAnnotation: (id<MKAnnotation> ) annotation {
     [_mapView setCenterCoordinate:annotation.coordinate animated:YES];
-//    MKCoordinateRegion region = MKCoordinateRegionMake(annotation.coordinate, MKCoordinateSpanMake(1.0, 1.0));
-//    [_mapView setRegion:[_mapView regionThatFits:region]];
+}
+
+#pragma mark - Actions
+- (IBAction)showHP1:(id)sender {
+    [self centerMapOnAnnotation:[self annotationWithName:@"Harry Potter Studio Tour London"]];
+}
+
+- (IBAction)showHP2:(id)sender {
+    [self centerMapOnAnnotation:[self annotationWithName:@"Wizarding World of Harry Potter Orlando"]];
+}
+
+- (IBAction)showHP3:(id)sender {
+    [self centerMapOnAnnotation:[self annotationWithName:@"Wizarding World of Harry Potter Hollywood"]];
 }
 
 - (IBAction)toggleTracking:(id)sender {
@@ -163,7 +159,10 @@ typedef enum {
         [_locationManager stopUpdatingLocation];
         _mapView.showsUserLocation = NO;
     }
-    
-    
 }
+
+
+
+
+
 @end
