@@ -50,7 +50,7 @@ extension EntityTableViewDataSourceProtocol {
             managedObjectContext!.deleteObject(fetchedResultsController!.objectAtIndexPath(indexPath) as! NSManagedObject)
             managedObjectContext!.processPendingChanges()
         } else if editingStyle == .Insert {
-            self.addItem(NSNull)
+            self.addItem()
         }
     }
     

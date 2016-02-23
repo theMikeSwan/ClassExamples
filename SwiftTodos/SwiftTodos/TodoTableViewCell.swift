@@ -8,17 +8,28 @@
 
 import UIKit
 
-class TodoTableViewCell: UITableViewCell {
+class TodoTableViewCell: EntityTableViewCell {
 
+    @IBOutlet weak var priorityView: UIView!
+    @IBOutlet weak var taskField: UILabel!
+    @IBOutlet weak var completedButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func configureUI() {
+        guard entity != nil else { return }
+        let task = entity as! Todo
+        taskField.text = task.task
+        completedButton.selected = task.completed
+        // TODO: set the proper gradient for the priority
 
-        // Configure the view for the selected state
     }
 
+    @IBAction func toggleCompleted(sender: UIButton) {
+        sender.selected = !sender.selected
+        let task = entity as! Todo
+        task.completed = sender.selected
+    }
 }

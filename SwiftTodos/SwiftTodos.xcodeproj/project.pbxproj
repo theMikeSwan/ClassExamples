@@ -25,6 +25,10 @@
 		429DB3D21C7BEC210089A732 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3D11C7BEC210089A732 /* CategoryDetailViewController.swift */; };
 		429DB3D41C7BEC370089A732 /* TodoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3D31C7BEC370089A732 /* TodoDataSource.swift */; };
 		429DB3D61C7BEC440089A732 /* CategoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3D51C7BEC440089A732 /* CategoryDataSource.swift */; };
+		429DB3DB1C7BEE440089A732 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3D71C7BEE440089A732 /* Todo+CoreDataProperties.swift */; };
+		429DB3DC1C7BEE440089A732 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3D81C7BEE440089A732 /* Todo.swift */; };
+		429DB3DD1C7BEE440089A732 /* TodoCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3D91C7BEE440089A732 /* TodoCategory+CoreDataProperties.swift */; };
+		429DB3DE1C7BEE440089A732 /* TodoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3DA1C7BEE440089A732 /* TodoCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		429DB3D11C7BEC210089A732 /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
 		429DB3D31C7BEC370089A732 /* TodoDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDataSource.swift; sourceTree = "<group>"; };
 		429DB3D51C7BEC440089A732 /* CategoryDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDataSource.swift; sourceTree = "<group>"; };
+		429DB3D71C7BEE440089A732 /* Todo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		429DB3D81C7BEE440089A732 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		429DB3D91C7BEE440089A732 /* TodoCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		429DB3DA1C7BEE440089A732 /* TodoCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,26 +89,62 @@
 			isa = PBXGroup;
 			children = (
 				429DB3A81C7BD8DC0089A732 /* AppDelegate.swift */,
-				429DB3C71C7BEBCF0089A732 /* TodoTableViewController.swift */,
-				429DB3C91C7BEBDD0089A732 /* CategoryTableViewController.swift */,
-				429DB3CB1C7BEBF20089A732 /* TodoTableViewCell.swift */,
-				429DB3CD1C7BEBFC0089A732 /* CategoryTableViewCell.swift */,
-				429DB3CF1C7BEC150089A732 /* TodoDetailViewController.swift */,
-				429DB3D11C7BEC210089A732 /* CategoryDetailViewController.swift */,
-				429DB3D31C7BEC370089A732 /* TodoDataSource.swift */,
-				429DB3D51C7BEC440089A732 /* CategoryDataSource.swift */,
+				429DB3DF1C7BEFC70089A732 /* Model */,
+				429DB3E01C7BEFF70089A732 /* ViewControllers */,
+				429DB3E11C7BF00D0089A732 /* Views */,
+				429DB3E21C7BF0180089A732 /* DataSources */,
 				429DB3AC1C7BD8DC0089A732 /* Main.storyboard */,
 				429DB3B21C7BD8DC0089A732 /* Assets.xcassets */,
 				429DB3B41C7BD8DC0089A732 /* LaunchScreen.storyboard */,
-				429DB3BD1C7BDE0E0089A732 /* EntityDataSourceProtocol.swift */,
-				429DB3BE1C7BDE0E0089A732 /* EntityTableViewCell.swift */,
-				429DB3BF1C7BDE0E0089A732 /* EntityTableViewDataSourceProtocol.swift */,
 				429DB3C31C7BE7900089A732 /* Done.png */,
 				429DB3C41C7BE7900089A732 /* NotDone.png */,
 				429DB3B71C7BD8DC0089A732 /* Info.plist */,
 				429DB3AF1C7BD8DC0089A732 /* SwiftTodos.xcdatamodeld */,
 			);
 			path = SwiftTodos;
+			sourceTree = "<group>";
+		};
+		429DB3DF1C7BEFC70089A732 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				429DB3D71C7BEE440089A732 /* Todo+CoreDataProperties.swift */,
+				429DB3D81C7BEE440089A732 /* Todo.swift */,
+				429DB3D91C7BEE440089A732 /* TodoCategory+CoreDataProperties.swift */,
+				429DB3DA1C7BEE440089A732 /* TodoCategory.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		429DB3E01C7BEFF70089A732 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				429DB3C71C7BEBCF0089A732 /* TodoTableViewController.swift */,
+				429DB3C91C7BEBDD0089A732 /* CategoryTableViewController.swift */,
+				429DB3CF1C7BEC150089A732 /* TodoDetailViewController.swift */,
+				429DB3D11C7BEC210089A732 /* CategoryDetailViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		429DB3E11C7BF00D0089A732 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				429DB3BE1C7BDE0E0089A732 /* EntityTableViewCell.swift */,
+				429DB3CB1C7BEBF20089A732 /* TodoTableViewCell.swift */,
+				429DB3CD1C7BEBFC0089A732 /* CategoryTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		429DB3E21C7BF0180089A732 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				429DB3BD1C7BDE0E0089A732 /* EntityDataSourceProtocol.swift */,
+				429DB3BF1C7BDE0E0089A732 /* EntityTableViewDataSourceProtocol.swift */,
+				429DB3D31C7BEC370089A732 /* TodoDataSource.swift */,
+				429DB3D51C7BEC440089A732 /* CategoryDataSource.swift */,
+			);
+			name = DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +223,8 @@
 				429DB3CA1C7BEBDD0089A732 /* CategoryTableViewController.swift in Sources */,
 				429DB3D01C7BEC150089A732 /* TodoDetailViewController.swift in Sources */,
 				429DB3B11C7BD8DC0089A732 /* SwiftTodos.xcdatamodeld in Sources */,
+				429DB3DB1C7BEE440089A732 /* Todo+CoreDataProperties.swift in Sources */,
+				429DB3DC1C7BEE440089A732 /* Todo.swift in Sources */,
 				429DB3C81C7BEBCF0089A732 /* TodoTableViewController.swift in Sources */,
 				429DB3CC1C7BEBF20089A732 /* TodoTableViewCell.swift in Sources */,
 				429DB3C11C7BDE0E0089A732 /* EntityTableViewCell.swift in Sources */,
@@ -186,9 +232,11 @@
 				429DB3C01C7BDE0E0089A732 /* EntityDataSourceProtocol.swift in Sources */,
 				429DB3D41C7BEC370089A732 /* TodoDataSource.swift in Sources */,
 				429DB3C21C7BDE0E0089A732 /* EntityTableViewDataSourceProtocol.swift in Sources */,
+				429DB3DE1C7BEE440089A732 /* TodoCategory.swift in Sources */,
 				429DB3D21C7BEC210089A732 /* CategoryDetailViewController.swift in Sources */,
 				429DB3CE1C7BEBFC0089A732 /* CategoryTableViewCell.swift in Sources */,
 				429DB3D61C7BEC440089A732 /* CategoryDataSource.swift in Sources */,
+				429DB3DD1C7BEE440089A732 /* TodoCategory+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

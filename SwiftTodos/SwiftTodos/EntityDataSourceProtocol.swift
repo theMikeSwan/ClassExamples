@@ -22,7 +22,7 @@ protocol EntityDataSourceProtocol: NSFetchedResultsControllerDelegate {
     /// Returns the reuse identifier that should be used for the table or collections view cells. The default is "managedObjectCell". The index path of the cell is passed in to allow different resuse IDs to be used if needed.
     func cellReuseIDForIndexPath(indexPath: NSIndexPath) -> String
     /// The desired size for fetch batches, the default is 20.
-    func fetchReguestBatchSize() -> Int
+    func fetchBatchSize() -> Int
     /// Starts the fetch request running, called when a non nil managed object context is set
     func initiateFetchRequest()
     /// Called if the fetch request is successful so that the data view can be refreshed with the new data.
@@ -47,9 +47,11 @@ extension EntityDataSourceProtocol {
             }
         }
     }
+    
     func cellReuseIDForIndexPath(indexPath: NSIndexPath) -> String {
         return "managedObjectCell"
     }
+    
     func fetchBatchSize() -> Int {
         return 20
     }
@@ -73,7 +75,7 @@ extension EntityDataSourceProtocol {
         }
     }
     
-    func addItem(sender: AnyObject) {
+    func addItem() {
         guard managedObjectContext != nil else { return }
         _ = NSEntityDescription.insertNewObjectForEntityForName(self.entityName(), inManagedObjectContext:managedObjectContext!)
         managedObjectContext!.processPendingChanges()

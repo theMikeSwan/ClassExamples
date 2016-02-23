@@ -9,6 +9,23 @@
 import UIKit
 
 class CategoryDetailViewController: UIViewController {
+    
+    @IBOutlet weak var categoryField: UITextField!
+    // TODO: Change this to a new data source that just does a passed in set or array of items.
+
+    @IBOutlet var dataSource: TodoDataSource!
+    
+    var category: TodoCategory! {
+        didSet {
+            self.configureUI()
+        }
+    }
+    
+    func configureUI() {
+        categoryField.text = category.name
+        // TODO: Make the table display the category's tasks
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +39,13 @@ class CategoryDetailViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showtodoDetail" {
+            let nextVC = segue.destinationViewController as! TodoDetailViewController
+            let cell = sender as! EntityTableViewCell
+            nextVC.todo = cell.entity as! Todo
+        }
     }
-    */
-
 }

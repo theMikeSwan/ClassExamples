@@ -7,7 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
-class CategoryDataSource: NSObject {
-
+class CategoryDataSource: NSObject, EntityTableViewDataSourceProtocol {
+    func entityName() -> String {
+        return "TodoCategory"
+    }
+    
+    func sortDescriptors() -> [NSSortDescriptor] {
+        let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        return [nameSortDescriptor]
+    }
+    
+    
+    var managedObjectContext: NSManagedObjectContext?
+    var fetchedResultsController: NSFetchedResultsController?
+    var fetchPredicate: NSPredicate?
 }

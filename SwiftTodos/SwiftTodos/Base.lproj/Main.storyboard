@@ -45,16 +45,16 @@
             </objects>
             <point key="canvasLocation" x="960" y="25"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Todo Table View Controller-->
         <scene sceneID="cCq-VI-NGa">
             <objects>
-                <tableViewController id="PPO-9B-Lin" sceneMemberID="viewController">
+                <tableViewController id="PPO-9B-Lin" customClass="TodoTableViewController" customModule="SwiftTodos" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bdq-AX-gAP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="managedObjectCell" id="Dw4-iF-I1Q">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="managedObjectCell" id="Dw4-iF-I1Q" customClass="TodoTableViewCell" customModule="SwiftTodos" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dw4-iF-I1Q" id="ozd-Xg-Ttd">
@@ -96,30 +96,41 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="completedButton" destination="R2Y-Qg-EIs" id="Biz-K9-6G2"/>
+                                    <outlet property="priorityView" destination="ViB-fM-nQX" id="XXa-en-LRd"/>
+                                    <outlet property="taskField" destination="7Bh-FZ-7EM" id="RlR-Jf-r5b"/>
                                     <segue destination="Lzm-Te-VHs" kind="show" identifier="showTodoDetail" id="Ao2-HX-gQF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="PPO-9B-Lin" id="XqT-kE-7PC"/>
-                            <outlet property="delegate" destination="PPO-9B-Lin" id="7Q2-3L-VNp"/>
+                            <outlet property="dataSource" destination="vno-Mf-gUr" id="0gw-77-xhN"/>
+                            <outlet property="delegate" destination="PPO-9B-Lin" id="hOf-Xz-gzd"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ljA-Op-a6W">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="Rc5-Kq-qB5"/>
+                            <barButtonItem systemItem="add" id="Rc5-Kq-qB5">
+                                <connections>
+                                    <action selector="addItem:" destination="PPO-9B-Lin" id="SmV-Og-bJM"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="edit" id="mlD-eH-SQw"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dataSource" destination="vno-Mf-gUr" id="Gof-xq-Qc9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTN-47-H3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="vno-Mf-gUr" customClass="TodoDataSource" customModule="SwiftTodos" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1640" y="25"/>
         </scene>
-        <!--View Controller-->
+        <!--Todo Detail View Controller-->
         <scene sceneID="Ekh-bS-q1a">
             <objects>
-                <viewController id="Lzm-Te-VHs" sceneMemberID="viewController">
+                <viewController id="Lzm-Te-VHs" customClass="TodoDetailViewController" customModule="SwiftTodos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2d0-6E-wIi"/>
                         <viewControllerLayoutGuide type="bottom" id="QvU-bb-pLd"/>
@@ -136,6 +147,9 @@
                                 </constraints>
                                 <state key="normal" image="NotDone.png"/>
                                 <state key="selected" image="Done.png"/>
+                                <connections>
+                                    <action selector="toggleCompleted:" destination="Lzm-Te-VHs" eventType="touchUpInside" id="zp8-2S-9Ta"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="knf-91-0Yg">
                                 <rect key="frame" x="20" y="110" width="560" height="157"/>
@@ -174,6 +188,9 @@
                                     <segment title="Meduim"/>
                                     <segment title="High"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changePriority:" destination="Lzm-Te-VHs" eventType="valueChanged" id="7f6-i6-ObP"/>
+                                </connections>
                             </segmentedControl>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnA-4p-NrK">
                                 <rect key="frame" x="0.0" y="275" width="600" height="216"/>
@@ -202,6 +219,13 @@
                             <constraint firstItem="knf-91-0Yg" firstAttribute="top" secondItem="j9K-1y-GBq" secondAttribute="bottom" constant="8" id="wqd-bR-Fy0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="completedButton" destination="0w2-uZ-ml9" id="lM1-Eb-zqy"/>
+                        <outlet property="details" destination="knf-91-0Yg" id="sMz-8b-Jrc"/>
+                        <outlet property="prioritySegmentControl" destination="R2F-GQ-j3j" id="0xy-dj-PgO"/>
+                        <outlet property="taskName" destination="j9K-1y-GBq" id="dRf-1u-EpW"/>
+                        <outlet property="todoCategory" destination="dnA-4p-NrK" id="e1C-6w-ImR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2PZ-kd-HgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem systemItem="trash" id="QYu-SY-xK9"/>
@@ -227,16 +251,16 @@
             </objects>
             <point key="canvasLocation" x="960" y="686"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Category Table View Controller-->
         <scene sceneID="xCt-BH-6TM">
             <objects>
-                <tableViewController id="ddo-Jk-BHe" sceneMemberID="viewController">
+                <tableViewController id="ddo-Jk-BHe" customClass="CategoryTableViewController" customModule="SwiftTodos" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rpj-Ws-chG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="managedObjectCell" id="Paw-o7-7xY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="managedObjectCell" id="Paw-o7-7xY" customClass="CategoryTableViewCell" customModule="SwiftTodos" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Paw-o7-7xY" id="Wbv-0r-C3x">
@@ -268,30 +292,40 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="categoryName" destination="IcQ-af-oPs" id="2Tj-Fq-0kT"/>
+                                    <outlet property="taskCount" destination="Bgv-lX-df4" id="LXH-4s-8J6"/>
                                     <segue destination="HRa-uz-mMY" kind="show" identifier="showCategoryDetail" id="TF4-sK-9vQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="ddo-Jk-BHe" id="1ZF-lD-y4R"/>
+                            <outlet property="dataSource" destination="Fd8-y5-Fb0" id="INi-Mb-DNu"/>
                             <outlet property="delegate" destination="ddo-Jk-BHe" id="K1U-rt-Zv7"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="7ej-cu-C4q">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="0FR-em-d15"/>
+                            <barButtonItem systemItem="add" id="0FR-em-d15">
+                                <connections>
+                                    <action selector="addItem:" destination="ddo-Jk-BHe" id="n7a-BY-FXv"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="edit" id="fLS-i2-u1s"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dataSource" destination="Fd8-y5-Fb0" id="u18-4t-O7g"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ds7-wg-ZFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Fd8-y5-Fb0" customClass="CategoryDataSource" customModule="SwiftTodos" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1640" y="686"/>
         </scene>
-        <!--View Controller-->
+        <!--Category Detail View Controller-->
         <scene sceneID="CJa-24-HlJ">
             <objects>
-                <viewController id="HRa-uz-mMY" sceneMemberID="viewController">
+                <viewController id="HRa-uz-mMY" customClass="CategoryDetailViewController" customModule="SwiftTodos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WIn-eg-cNh"/>
                         <viewControllerLayoutGuide type="bottom" id="Pd8-qa-kAN"/>
@@ -309,7 +343,7 @@
                                 <rect key="frame" x="0.0" y="110" width="600" height="441"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="managedObjectCell" id="CeY-OF-1G0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="managedObjectCell" id="CeY-OF-1G0" customClass="TodoTableViewCell" customModule="SwiftTodos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CeY-OF-1G0" id="WXm-Ap-JGb">
@@ -336,6 +370,9 @@
                                                     </constraints>
                                                     <state key="normal" image="NotDone.png"/>
                                                     <state key="selected" image="Done.png"/>
+                                                    <connections>
+                                                        <action selector="toggleCompleted:" destination="CeY-OF-1G0" eventType="touchUpInside" id="Xyc-SS-skZ"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -351,10 +388,17 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="completedButton" destination="2p8-Mv-Hp7" id="FbW-Uv-WWx"/>
+                                            <outlet property="priorityView" destination="WXm-Ap-JGb" id="PkK-Op-fPb"/>
+                                            <outlet property="taskField" destination="mic-2M-4oq" id="Bj3-gs-4Tl"/>
                                             <segue destination="Lzm-Te-VHs" kind="show" identifier="showTodoDetail" id="CLU-NE-YhP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7qs-jB-Ozm" id="ewm-Tq-SM1"/>
+                                    <outlet property="delegate" destination="HRa-uz-mMY" id="I9u-ue-DxA"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqh-JJ-zGZ">
                                 <rect key="frame" x="20" y="76" width="75" height="21"/>
@@ -372,9 +416,14 @@
                             <constraint firstItem="Te1-WJ-UCI" firstAttribute="baseline" secondItem="iqh-JJ-zGZ" secondAttribute="baseline" id="xBL-a5-YFF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="categoryField" destination="Te1-WJ-UCI" id="Sdb-p4-2gQ"/>
+                        <outlet property="dataSource" destination="7qs-jB-Ozm" id="QW0-W8-rND"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LaH-0Z-doK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem systemItem="trash" id="zNF-nQ-s4E"/>
+                <customObject id="7qs-jB-Ozm" customClass="TodoDataSource" customModule="SwiftTodos" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="2310" y="686"/>
         </scene>

@@ -8,17 +8,22 @@
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell {
+class CategoryTableViewCell: EntityTableViewCell {
 
+    @IBOutlet weak var categoryName: UILabel!
+    @IBOutlet weak var taskCount: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configureUI()
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func configureUI() {
+        guard entity != nil else { return }
+        let cat = entity as! TodoCategory
+        categoryName.text = cat.name
+        var total = cat.todos?.count
+        if total == nil { total = 0 }
+        taskCount.text = "\(total) tasks"
     }
 
 }
