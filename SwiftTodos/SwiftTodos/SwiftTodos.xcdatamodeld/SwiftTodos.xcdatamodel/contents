@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15E39d" minimumToolsVersion="Automatic">
+    <entity name="Todo" syncable="YES">
+        <attribute name="completed" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priorityIndex" optional="YES" attributeType="Integer 64" minValueString="0" maxValueString="2" defaultValueString="0" syncable="YES"/>
+        <attribute name="task" attributeType="String" defaultValueString="task" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TodoCategory" inverseName="todos" inverseEntity="TodoCategory" syncable="YES"/>
+    </entity>
+    <entity name="TodoCategory" syncable="YES">
+        <attribute name="name" attributeType="String" defaultValueString="category" syncable="YES"/>
+        <relationship name="todos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Todo" inverseName="category" inverseEntity="Todo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TodoCategory" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Todo" positionX="-54" positionY="-9" width="128" height="120"/>
+    </elements>
+</model>
