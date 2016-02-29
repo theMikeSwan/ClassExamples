@@ -152,8 +152,8 @@
 				429DB3D51C7BEC440089A732 /* CategoryDataSource.swift */,
 				42A1A2A11C83A2D5002A0F5F /* CategoryDetailDataSource.swift */,
 				42A1A2A51C83C2F7002A0F5F /* CategoryPickerViewDataSource.swift */,
-				42A1A2A31C83A5F2002A0F5F /* EntityPickerViewDataSource.swift */,
 				42A1A29D1C837A0B002A0F5F /* EntityDataSource.swift */,
+				42A1A2A31C83A5F2002A0F5F /* EntityPickerViewDataSource.swift */,
 				42A1A29F1C837A36002A0F5F /* EntityTableViewDataSource.swift */,
 			);
 			name = DataSources;

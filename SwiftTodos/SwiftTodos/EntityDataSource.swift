@@ -9,6 +9,13 @@
 import UIKit
 import CoreData
 
+/**
+ EntityDataSource is the root class for simplifying the display of Core Data entities in data views (such as table views and collection views).
+ This class handles the common feteched results tasks while the subclasses; EntityTableViewDataSource, EntityCollectionViewDataSource, and EntityPickerViewDataSource; handle the specifics for table, collection, and picker views.
+ 
+ Usage:
+ In order to use this class you need to provide an implementation of sortDescriptors() and entityName(). For more details see the documentation for each of those functions.
+ */
 class EntityDataSource: NSObject, NSFetchedResultsControllerDelegate {
     var managedObjectContext: NSManagedObjectContext? {
         didSet {
@@ -34,13 +41,20 @@ class EntityDataSource: NSObject, NSFetchedResultsControllerDelegate {
     func reloadDataView() {
         print("**WARNING** Subclasses need to implement reloadDataView in order for data to be displayed.")
     }
-    
+    /// Specifies the reuse ID for cells. The default value is "managedObjectCell".
     func cellReuseIDForIndexPath(indexPath: NSIndexPath) -> String {
         return "managedObjectCell"
     }
-    
+    /// Specifies the batch size that should be used. The default is 20.
     func fetchBatchSize() -> Int {
         return 20
+    }
+    
+    /// Adds an entity of the type specified by entityName()
+    func addItem() {
+        guard managedObjectContext != nil else { return }
+        _ = NSEntityDescription.insertNewObjectForEntityForName(self.entityName(), inManagedObjectContext:managedObjectContext!)
+        managedObjectContext!.processPendingChanges()
     }
     
     func initiateFetchRequest() {
@@ -61,11 +75,4 @@ class EntityDataSource: NSObject, NSFetchedResultsControllerDelegate {
             NSLog("Error fetching \(self.entityName()) entities: \(error)")
         }
     }
-    
-    func addItem() {
-        guard managedObjectContext != nil else { print("dataSource moc was nil while adding item"); return }
-        _ = NSEntityDescription.insertNewObjectForEntityForName(self.entityName(), inManagedObjectContext:managedObjectContext!)
-        managedObjectContext!.processPendingChanges()
-    }
-
 }

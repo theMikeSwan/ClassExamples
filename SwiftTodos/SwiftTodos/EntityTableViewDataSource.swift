@@ -9,6 +9,12 @@
 import UIKit
 import CoreData
 
+/**
+EntityTableViewDataSource is a subclass of EntityDataSource for supplying a given entity to a table view. This class does not add any methods that need to be subclassed over what is already required by EntityDataSource.
+ 
+ It is required that the cells in the table view inherit from EntityTableViewCell and configure themselves based on the entity that is passed in.
+ If you wish to use a different kind of table view cell you must override configureCell(_:, atIndex:) to cinfigure the cell as desired.
+*/
 class EntityTableViewDataSource: EntityDataSource, UITableViewDataSource {
     @IBOutlet var tableView: UITableView?
     
