@@ -9,20 +9,16 @@
 import UIKit
 import CoreData
 
-class TodoDataSource: NSObject, EntityTableViewDataSourceProtocol {
+class TodoDataSource: EntityTableViewDataSource {
     
-    func entityName() -> String {
+    override func entityName() -> String {
         return "Todo"
     }
     
-    func sortDescriptors() -> [NSSortDescriptor] {
+    override func sortDescriptors() -> [NSSortDescriptor] {
         let prioritySortDescriptor = NSSortDescriptor(key: "priorityIndex", ascending: true)
         let nameSortDescriptor = NSSortDescriptor(key: "task", ascending: true)
         return [prioritySortDescriptor, nameSortDescriptor]
     }
-    
-    
-    var managedObjectContext: NSManagedObjectContext?
-    var fetchedResultsController: NSFetchedResultsController?
-    var fetchPredicate: NSPredicate?
+
 }

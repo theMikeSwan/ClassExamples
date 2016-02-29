@@ -10,9 +10,9 @@ import Foundation
 import CoreData
 
 enum TodoPriority: Int64 {
-    case low = 0
-    case meduim = 1
-    case high = 2
+    case Low = 0
+    case Meduim
+    case High
 }
 
 class Todo: NSManagedObject {

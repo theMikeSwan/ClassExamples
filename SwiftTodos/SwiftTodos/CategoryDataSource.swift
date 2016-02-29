@@ -9,18 +9,13 @@
 import UIKit
 import CoreData
 
-class CategoryDataSource: NSObject, EntityTableViewDataSourceProtocol {
-    func entityName() -> String {
+class CategoryDataSource: EntityTableViewDataSource {
+    override func entityName() -> String {
         return "TodoCategory"
     }
     
-    func sortDescriptors() -> [NSSortDescriptor] {
+    override func sortDescriptors() -> [NSSortDescriptor] {
         let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         return [nameSortDescriptor]
     }
-    
-    
-    var managedObjectContext: NSManagedObjectContext?
-    var fetchedResultsController: NSFetchedResultsController?
-    var fetchPredicate: NSPredicate?
 }

@@ -12,9 +12,7 @@
 		429DB3B11C7BD8DC0089A732 /* SwiftTodos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3AF1C7BD8DC0089A732 /* SwiftTodos.xcdatamodeld */; };
 		429DB3B31C7BD8DC0089A732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 429DB3B21C7BD8DC0089A732 /* Assets.xcassets */; };
 		429DB3B61C7BD8DC0089A732 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 429DB3B41C7BD8DC0089A732 /* LaunchScreen.storyboard */; };
-		429DB3C01C7BDE0E0089A732 /* EntityDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3BD1C7BDE0E0089A732 /* EntityDataSourceProtocol.swift */; };
 		429DB3C11C7BDE0E0089A732 /* EntityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3BE1C7BDE0E0089A732 /* EntityTableViewCell.swift */; };
-		429DB3C21C7BDE0E0089A732 /* EntityTableViewDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3BF1C7BDE0E0089A732 /* EntityTableViewDataSourceProtocol.swift */; };
 		429DB3C51C7BE7900089A732 /* Done.png in Resources */ = {isa = PBXBuildFile; fileRef = 429DB3C31C7BE7900089A732 /* Done.png */; };
 		429DB3C61C7BE7900089A732 /* NotDone.png in Resources */ = {isa = PBXBuildFile; fileRef = 429DB3C41C7BE7900089A732 /* NotDone.png */; };
 		429DB3C81C7BEBCF0089A732 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3C71C7BEBCF0089A732 /* TodoTableViewController.swift */; };
@@ -29,6 +27,12 @@
 		429DB3DC1C7BEE440089A732 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3D81C7BEE440089A732 /* Todo.swift */; };
 		429DB3DD1C7BEE440089A732 /* TodoCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3D91C7BEE440089A732 /* TodoCategory+CoreDataProperties.swift */; };
 		429DB3DE1C7BEE440089A732 /* TodoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DB3DA1C7BEE440089A732 /* TodoCategory.swift */; };
+		42A1A29E1C837A0B002A0F5F /* EntityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1A29D1C837A0B002A0F5F /* EntityDataSource.swift */; };
+		42A1A2A01C837A36002A0F5F /* EntityTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1A29F1C837A36002A0F5F /* EntityTableViewDataSource.swift */; };
+		42A1A2A21C83A2D5002A0F5F /* CategoryDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1A2A11C83A2D5002A0F5F /* CategoryDetailDataSource.swift */; };
+		42A1A2A41C83A5F2002A0F5F /* EntityPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1A2A31C83A5F2002A0F5F /* EntityPickerViewDataSource.swift */; };
+		42A1A2A61C83C2F7002A0F5F /* CategoryPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1A2A51C83C2F7002A0F5F /* CategoryPickerViewDataSource.swift */; };
+		42A1A2A81C83D552002A0F5F /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1A2A71C83D552002A0F5F /* enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +43,7 @@
 		429DB3B21C7BD8DC0089A732 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		429DB3B51C7BD8DC0089A732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		429DB3B71C7BD8DC0089A732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		429DB3BD1C7BDE0E0089A732 /* EntityDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityDataSourceProtocol.swift; sourceTree = "<group>"; };
 		429DB3BE1C7BDE0E0089A732 /* EntityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityTableViewCell.swift; sourceTree = "<group>"; };
-		429DB3BF1C7BDE0E0089A732 /* EntityTableViewDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityTableViewDataSourceProtocol.swift; sourceTree = "<group>"; };
 		429DB3C31C7BE7900089A732 /* Done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Done.png; sourceTree = "<group>"; };
 		429DB3C41C7BE7900089A732 /* NotDone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotDone.png; sourceTree = "<group>"; };
 		429DB3C71C7BEBCF0089A732 /* TodoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,12 @@
 		429DB3D81C7BEE440089A732 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		429DB3D91C7BEE440089A732 /* TodoCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		429DB3DA1C7BEE440089A732 /* TodoCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCategory.swift; sourceTree = "<group>"; };
+		42A1A29D1C837A0B002A0F5F /* EntityDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityDataSource.swift; sourceTree = "<group>"; };
+		42A1A29F1C837A36002A0F5F /* EntityTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityTableViewDataSource.swift; sourceTree = "<group>"; };
+		42A1A2A11C83A2D5002A0F5F /* CategoryDetailDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetailDataSource.swift; sourceTree = "<group>"; };
+		42A1A2A31C83A5F2002A0F5F /* EntityPickerViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityPickerViewDataSource.swift; sourceTree = "<group>"; };
+		42A1A2A51C83C2F7002A0F5F /* CategoryPickerViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewDataSource.swift; sourceTree = "<group>"; };
+		42A1A2A71C83D552002A0F5F /* enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				429DB3A81C7BD8DC0089A732 /* AppDelegate.swift */,
+				42A1A2A71C83D552002A0F5F /* enums.swift */,
 				429DB3DF1C7BEFC70089A732 /* Model */,
 				429DB3E01C7BEFF70089A732 /* ViewControllers */,
 				429DB3E11C7BF00D0089A732 /* Views */,
@@ -139,10 +148,13 @@
 		429DB3E21C7BF0180089A732 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				429DB3BD1C7BDE0E0089A732 /* EntityDataSourceProtocol.swift */,
-				429DB3BF1C7BDE0E0089A732 /* EntityTableViewDataSourceProtocol.swift */,
 				429DB3D31C7BEC370089A732 /* TodoDataSource.swift */,
 				429DB3D51C7BEC440089A732 /* CategoryDataSource.swift */,
+				42A1A2A11C83A2D5002A0F5F /* CategoryDetailDataSource.swift */,
+				42A1A2A51C83C2F7002A0F5F /* CategoryPickerViewDataSource.swift */,
+				42A1A2A31C83A5F2002A0F5F /* EntityPickerViewDataSource.swift */,
+				42A1A29D1C837A0B002A0F5F /* EntityDataSource.swift */,
+				42A1A29F1C837A36002A0F5F /* EntityTableViewDataSource.swift */,
 			);
 			name = DataSources;
 			sourceTree = "<group>";
@@ -223,16 +235,20 @@
 				429DB3CA1C7BEBDD0089A732 /* CategoryTableViewController.swift in Sources */,
 				429DB3D01C7BEC150089A732 /* TodoDetailViewController.swift in Sources */,
 				429DB3B11C7BD8DC0089A732 /* SwiftTodos.xcdatamodeld in Sources */,
+				42A1A2A21C83A2D5002A0F5F /* CategoryDetailDataSource.swift in Sources */,
 				429DB3DB1C7BEE440089A732 /* Todo+CoreDataProperties.swift in Sources */,
 				429DB3DC1C7BEE440089A732 /* Todo.swift in Sources */,
 				429DB3C81C7BEBCF0089A732 /* TodoTableViewController.swift in Sources */,
+				42A1A2A81C83D552002A0F5F /* enums.swift in Sources */,
 				429DB3CC1C7BEBF20089A732 /* TodoTableViewCell.swift in Sources */,
+				42A1A2A01C837A36002A0F5F /* EntityTableViewDataSource.swift in Sources */,
+				42A1A2A41C83A5F2002A0F5F /* EntityPickerViewDataSource.swift in Sources */,
+				42A1A29E1C837A0B002A0F5F /* EntityDataSource.swift in Sources */,
 				429DB3C11C7BDE0E0089A732 /* EntityTableViewCell.swift in Sources */,
 				429DB3A91C7BD8DC0089A732 /* AppDelegate.swift in Sources */,
-				429DB3C01C7BDE0E0089A732 /* EntityDataSourceProtocol.swift in Sources */,
 				429DB3D41C7BEC370089A732 /* TodoDataSource.swift in Sources */,
-				429DB3C21C7BDE0E0089A732 /* EntityTableViewDataSourceProtocol.swift in Sources */,
 				429DB3DE1C7BEE440089A732 /* TodoCategory.swift in Sources */,
+				42A1A2A61C83C2F7002A0F5F /* CategoryPickerViewDataSource.swift in Sources */,
 				429DB3D21C7BEC210089A732 /* CategoryDetailViewController.swift in Sources */,
 				429DB3CE1C7BEBFC0089A732 /* CategoryTableViewCell.swift in Sources */,
 				429DB3D61C7BEC440089A732 /* CategoryDataSource.swift in Sources */,
@@ -386,6 +402,7 @@
 				429DB3BC1C7BD8DC0089A732 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

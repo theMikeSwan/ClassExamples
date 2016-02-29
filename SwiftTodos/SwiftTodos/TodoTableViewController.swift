@@ -17,11 +17,10 @@ class TodoTableViewController: UITableViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         dataSource.managedObjectContext = appDelegate.managedObjectContext
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let editButton = self.editButtonItem()
+        let addButton = self.navigationItem.rightBarButtonItems?.first
+        self.navigationItem.rightBarButtonItems = [addButton!, editButton]
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,10 +36,10 @@ class TodoTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showtodoDetail" {
+        if segue.identifier == SegueID.showTodoDetail.rawValue {
             let nextVC = segue.destinationViewController as! TodoDetailViewController
             let cell = sender as! EntityTableViewCell
-            nextVC.todo = cell.entity as! Todo
+            nextVC.todo = (cell.entity as! Todo)
         }
     }
 }

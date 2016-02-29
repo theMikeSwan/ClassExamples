@@ -11,17 +11,16 @@ import UIKit
 class CategoryTableViewController: UITableViewController {
 
     @IBOutlet var dataSource: CategoryDataSource!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         dataSource.managedObjectContext = appDelegate.managedObjectContext
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let editButton = self.editButtonItem()
+        let addButton = self.navigationItem.rightBarButtonItems?.first
+        self.navigationItem.rightBarButtonItems = [addButton!, editButton]
     }
 
     @IBAction func addItem(sender: AnyObject) {
@@ -36,7 +35,7 @@ class CategoryTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showCategoryDetail" {
+        if segue.identifier == SegueID.showCategoryDetail.rawValue {
             let nextVC = segue.destinationViewController as! CategoryDetailViewController
             let cell = sender as! EntityTableViewCell
             nextVC.category = cell.entity as! TodoCategory

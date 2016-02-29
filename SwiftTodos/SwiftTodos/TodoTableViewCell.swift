@@ -10,12 +10,15 @@ import UIKit
 
 class TodoTableViewCell: EntityTableViewCell {
 
-    @IBOutlet weak var priorityView: UIView!
-    @IBOutlet weak var taskField: UILabel!
-    @IBOutlet weak var completedButton: UIButton!
+    @IBOutlet weak private var priorityView: UIView!
+    @IBOutlet weak private var taskField: UILabel!
+    @IBOutlet weak private var completedButton: UIButton!
+    let gradient = CAGradientLayer()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        priorityView.layer.addSublayer(gradient)
     }
 
     override func configureUI() {
@@ -23,8 +26,23 @@ class TodoTableViewCell: EntityTableViewCell {
         let task = entity as! Todo
         taskField.text = task.task
         completedButton.selected = task.completed
-        // TODO: set the proper gradient for the priority
-
+        addGradient()
+    }
+    
+    func addGradient() {
+        let task = entity as! Todo
+        gradient.frame = priorityView.bounds
+        var color2 = UIColor.clearColor()
+        switch task.priority {
+        case .Low:
+            color2 = TodoPriorityColor.low
+        case .Meduim:
+            color2 = TodoPriorityColor.medium
+        case .High:
+            color2 = TodoPriorityColor.high
+        }
+        gradient.colors = [color2.CGColor, UIColor.whiteColor().CGColor]
+        
     }
 
     @IBAction func toggleCompleted(sender: UIButton) {

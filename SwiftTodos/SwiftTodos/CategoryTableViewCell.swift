@@ -12,6 +12,7 @@ class CategoryTableViewCell: EntityTableViewCell {
 
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var taskCount: UILabel!
+    let numberFormatter = NSNumberFormatter()
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
@@ -23,7 +24,9 @@ class CategoryTableViewCell: EntityTableViewCell {
         categoryName.text = cat.name
         var total = cat.todos?.count
         if total == nil { total = 0 }
-        taskCount.text = "\(total) tasks"
+        var totalString = numberFormatter.stringFromNumber(total!)
+        totalString = totalString?.stringByAppendingString(" tasks")
+        taskCount.text = totalString
     }
 
 }
